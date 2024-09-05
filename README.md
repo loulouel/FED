@@ -57,6 +57,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  Het is lastig om Engelse delen te lezen als je een Nederlandse screenreader gebruikt. Het is moeilijk om soepel van de ene pagina naar de andere te navigeren, omdat de screenreader soms blijft haken tussen twee kopjes. Ook op knoppen klikken verloopt vaak moeizaam. Bij de Miffy-pagina bijvoorbeeld, gaf de screenreader bij elke afbeelding alleen "link afbeelding" aan, zonder de context of beschrijving van de afbeelding erbij.
 
 </details>
 
