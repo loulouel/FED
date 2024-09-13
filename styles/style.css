@@ -29,3 +29,98 @@
 
 /* jouw code */
 
+
+
+.header {
+    padding: 0; /* Adjust padding to make the header smaller */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo img {
+    width: 4em; /* Adjust width of the logo image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+body, img {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    border: 0; /* Remove any default border */
+}
+
+.h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+h2 {
+	display: block;
+	Font-size: 1.5em;
+	margin-top: 3em; /* Remove default margin */
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.heading_1 {
+	font-size: 2em;
+	line-height: 1;
+	Margin-bottom: 2em;
+	margin-top: 2em;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.characters {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 15em; 
+}
+
+/* Style for the image */
+.characters img {
+    max-width: 13em; 
+    height: auto; 
+    display: block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2em; /* Space between the elements */
+	margin-top: 2em;
+	
+	justify-items: center;
+    align-items: center;
+}
+
+.small-item {
+    width: 10em;
+    grid-column: span 1;
+	border-radius: 1em;
+}
+
+.large-item {
+    width: 22em;
+    grid-column: 1 / -1; /* Span across both columns */
+	border-radius: 1em;
+}
+
+.small-item:nth-child(1) {
+    margin-right: -2em;
+}
+
+.small-item:nth-child(2) {
+    margin-left: -2em;
+}
