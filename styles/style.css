@@ -32,21 +32,21 @@
 
 
 .header {
-    padding: 0; /* Adjust padding to make the header smaller */
+    padding: 0; 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .logo img {
-    width: 4em; /* Adjust width of the logo image */
-    height: auto; /* Maintain aspect ratio */
+    width: 4em; 
+    height: auto; 
 }
 
 body, img {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    border: 0; /* Remove any default border */
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
 }
 
 .h2 {
@@ -59,7 +59,7 @@ body, img {
 h2 {
 	display: block;
 	Font-size: 1.5em;
-	margin-top: 3em; /* Remove default margin */
+	margin-top: 3em;
 }
 
 img {
@@ -87,7 +87,7 @@ img {
     height: 15em; 
 }
 
-/* Style for the image */
+
 .characters img {
     max-width: 13em; 
     height: auto; 
@@ -98,7 +98,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 2em; /* Space between the elements */
+    gap: 2em; /
 	margin-top: 2em;
 	
 	justify-items: center;
