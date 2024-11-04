@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
 	<header class="header">
 		<!-- Hamburger Menu Icon -->
 		<button id="hamburger" class="hamburger" aria-label="Menu">
@@ -22,14 +23,17 @@
 		</button>
 
 		<div class="logo">
-			<a href="index.html">
-				<img src="images/svg--logo.svg" alt="Logo">
+			<a href="index.html"> <!-- Link to your homepage-->
+				<img src="images/svg--logo.svg" alt="Logo"> <!-- Include an image for the logo -->
 			</a>
 		</div>
 
-		<a href="https://mrmen.com/cart" class="cart">
-			<img src="images/3721818.png" alt="Cart">
-		</a>
+		<div class="cart-container">
+			<a href="https://mrmen.com/cart" class="cart" aria-label="Cart">
+				<img src="images/3721818.png" alt="Cart" class="cart-icon">
+				<span class="cart-count" id="cart-count">0</span> <!-- Counter for items -->
+			</a>
+		</div>
 	</header>
 
 	<!-- Slide-out menu -->
@@ -45,37 +49,24 @@
 
 		<!-- Navigation Links -->
 		<ul class="menu-list">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="https://mrmen.com/pages/about-us">About</a></li>
-			<li><a href="https://mrmen.com/pages/characters">Characters</a></li>
-			<li><a href="shirt.html">Shop</a></li>
-			<li><a href="https://hub.mrmen.com/activities/">Free Printables</a></li>
-			<li><a href="https://hub.mrmen.com/which-mr-men-or-little-miss-are-you/">Quiz</a></li>
-			<li><a href="https://hub.mrmen.com/which-mr-men-or-little-miss-are-you/">Discover You</a></li>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Characters</a></li>
+			<li><a href="#">Shop</a></li>
+			<li><a href="#">Free Printables</a></li>
+			<li><a href="#">Quiz</a></li>
+			<li><a href="#">Discover You</a></li>
 		</ul>
 	</nav>
 
 
 	<main>
-
-		<h3 id="DarkModetext">Dark Mode is OFF</h3>
-		<button onclick="darkMode()">Darkmode</button>
-		<button onclick="lightMode()">LightMode</button>
-
-		<!-- for light/dark mode, I got the code from this website: https://www.geeksforgeeks.org/how-to-make-dark-mode-for-websites-using-html-css-javascript/-->
-		<div class="font-size-controls">
-			<button onclick="increaseFontSize()">Increase Font Size</button>
-			<button onclick="decreaseFontSize()">Decrease Font Size</button>
-		</div>
-
-		<!-- asked help from chatgpt with how to increase a font size-->
-		<div class="audio-container">
-			<audio controls src="geluid/song.mp3"></audio>
-		</div>
+		
+	
 
 		<div class="h2">
-			<h1> With over 50 years heritage
-				<br> and over 90 <br> characters, there's a Mr. Men <br> Little Miss in us all!
+			<h1> With over 50 years heritage and
+				<br> over 90 <br> characters, there's a Mr. Men <br> Little Miss in us all!
 			</h1>
 		</div>
 
@@ -83,9 +74,12 @@
 
 		<img src="images/banner.webp" alt="">
 
-		<img src="images/reveal-the-new-characters_836d93b6-ec25-4488-a5a1-acf82d57a661.webp" alt="reveal the new characters">
+		<div class="media-container">
+			<img src="images/reveal-the-new-characters_836d93b6-ec25-4488-a5a1-acf82d57a661.webp" alt="Reveal the New Characters">
+			<video controls autoplay muted src="geluid/Introducing Little Miss Surprise and Mr. Fib!.mp4" class="responsive-video"></video>
+		</div>
 
-		<h2 class="heading_1">Meet The Characters</h2>
+		<h2 class="heading_1">Meet <br> The Characters</h2>
 
 		<div class="carousel-wrapper">
 			<div class="carousel-container">
@@ -124,81 +118,92 @@
 		</a>
 		<img src="images/IMG_5854.jpg" alt="Family portrait maker">
 
-		<section class="grid-container">
+		<article class="grid-container">
 			<img src="images/mrmen-littlemiss_gifts-onlineshop_discover-you.webp" alt="Discover You" class="small-item">
 			<img src="images/mrmen-littlemiss_gifts-onlineshop_free-activities.webp" alt="Free Activities"
 				class="small-item">
 			<img src="images/mrmen-littlemiss_gifts-onlineshop_quiz.webp" alt="Quiz" class="large-item">
-		</section>
+		</article>
 
 		<img src="images/versiering1.png" alt="styling">
 
 		<section class="news">
-			<div class="news-header">
+			<header class="news-header">
 				<img src="images/IMG_5891.png" alt="News Icon">
-				<h2>News</h2>
-			</div>
-			<div class="container">
-				<button id="prev-btn">‹</button>
-				<div class="carousel" id="item-list">
-					<div class="carousel-item">
+				<h2><strong>News</strong></h2>
+			</header>
+
+			<article class="container">
+				<button class="prev-btn">‹</button>
+				<div class="carousel">
+					<article class="carousel-item">
 						<img src="images/cover-new-char_c299c7b0-4631-4632-b38b-1f5b1c965812.webp"
 							alt="Little Miss Surprise and Mr. Fib">
 						<p>INTRODUCING LITTLE MISS SURPRISE AND MR. FIB</p>
-					</div>
-					<div class="carousel-item">
+					</article>
+					<article class="carousel-item">
 						<img src="images/DSC07681.webp" alt="Exhibition in Brighton">
 						<p>MR. MEN LITTLE MISS EXHIBITION IN BRIGHTON</p>
-					</div>
-					<div class="carousel-item">
+					</article>
+					<article class="carousel-item">
 						<img src="images/mmlm-box-pbhalf.webp" alt="Happy Meal">
 						<p>MCDONALD'S NEW MR. MEN LITTLE MISS HAPPY MEAL!</p>
-					</div>
-					<div class="carousel-item">
+					</article>
+					<article class="carousel-item">
 						<img src="images/hong-kong-international-licensing-show-thumb.webp" alt="Licensing Show">
 						<p>MR. MEN LITTLE MISS AT THE HONG KONG INTERNATIONAL LICENSING SHOW</p>
-					</div>
-					<div class="carousel-item">
+					</article>
+					<article class="carousel-item">
 						<img src="images/1024_x_640_1.webp" alt="Red Nose Day T-shirt">
 						<p>TK MAXX AND COMIC RELIEF LAUNCH BRAND NEW RED NOSE DAY T-SHIRT RANGE WITH MR. MEN LITTLE MISS
 						</p>
-					</div>
+					</article>
 				</div>
-				<button id="next-btn">›</button>
-			</div>
+				<button class="next-btn">›</button>
+				<div id="myProgress">
+					<div id="myBar"></div>
+				</div>
+			</article>
 		</section>
 
 		<img src="images/versiering.png" alt="styling">
-
 	</main>
 
-
-
-	<section>
-		<p> All products on this site are manufactured and fulfilled by Star Edition Ltd, under license from MML.</p>
-	</section>
+	<article>
+		<p><strong>All products on this site are manufactured and fulfilled by Star Editions Ltd, under license from MMLM.</strong></p>
+	</article>
 
 	<footer>
-		<!-- Logo and Copyright Section -->
-		<div class="footer-logo-copyright">
-			<img src="images/svg--logo.svg" alt="">
-			<p>MR. MEN™ LITTLE MISS™ Copyright © 2024 THOIP (a Sanrio company). <br> All rights reserved.</p>
+		<div class="footer-content">
+			<div class="footer-logo-copyright">
+				<img src="images/svg--logo.svg" alt="">
+			</div>
+			<p>MR. MEN™ LITTLE MISS™ Copyright © 2024<br>THOIP (a Sanrio company).<br>All rights reserved.</p>
 		</div>
 
-		<!-- Social Media Links -->
 		<nav class="social-media">
-			<a href="https://www.facebook.com/mrmenlittlemiss/" target="_blank">
-				<img src="images/facebook.png" alt="Facebook">
-			</a>
-			<a href="https://x.com/mrmenofficial" target="_blank">
-				<img src="images/twitter.png" alt="X (Twitter)">
-			</a>
-			<a href="https://www.instagram.com/mrmenofficial/" target="_blank">
-				<img src="images/insta.png" alt="Instagram">
-			</a>
-			<a href="https://www.youtube.com/channel/UCjT4aTfoAbCdvc7Z_CplgCg" target="_blank">
-				<img src="images/youtube.png" alt="YouTube">
-			</a>
+			<ul>
+				<li>
+					<a href="https://www.facebook.com/mrmenlittlemiss/" target="_blank">
+						<img src="images/facebook.png" alt="Facebook">
+					</a>
+				</li>
+				<li>
+					<a href="https://x.com/mrmenofficial" target="_blank">
+						<img src="images/twitter.png" alt="X (Twitter)">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/mrmenofficial/" target="_blank">
+						<img src="images/insta.png" alt="Instagram">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/channel/UCjT4aTfoAbCdvc7Z_CplgCg" target="_blank">
+						<img src="images/youtube.png" alt="YouTube">
+					</a>
+				</li>
+			</ul>
 		</nav>
 
 		<!-- Navigation Section with Collapsible Menu -->
@@ -213,20 +218,22 @@
 		<!-- asked GPT how to do this. Prompt: How to make a navigation that opens and closes but doesn't hinder the rest of the content -->
 
 		<!-- Payment Methods Section -->
-		<!-- Payment Methods Section -->
 		<section class="payment-methods">
-			<img src="images/amex.JPEG" alt="Amex">
-			<img src="images/applepay.JPEG" alt="Apple Pay">
-			<img src="images/discover.JPEG" alt="Discover">
-			<img src="images/googlepay.JPEG" alt="Google Pay">
-			<img src="images/ideal.JPEG" alt="Ideal">
-			<img src="images/maestro.JPEG" alt="maestro">
-			<img src="images/mastercard.JPEG" alt="master card">
-			<img src="images/paypal.JPEG" alt="PayPal">
-			<img src="images/unionpay.JPEG" alt="UnionPay">
-			<img src="images/shop.JPEG" alt="shop">
-			<img src="images/Visa.JPEG" alt="Visa">
+			<ul>
+				<li><img src="images/amex.JPEG" alt="Amex"></li>
+				<li><img src="images/applepay.JPEG" alt="Apple Pay"></li>
+				<li><img src="images/discover.JPEG" alt="Discover"></li>
+				<li><img src="images/googlepay.JPEG" alt="Google Pay"></li>
+				<li><img src="images/ideal.JPEG" alt="Ideal"></li>
+				<li><img src="images/maestro.JPEG" alt="Maestro"></li>
+				<li><img src="images/mastercard.JPEG" alt="MasterCard"></li>
+				<li><img src="images/paypal.JPEG" alt="PayPal"></li>
+				<li><img src="images/unionpay.JPEG" alt="UnionPay"></li>
+				<li><img src="images/shop.JPEG" alt="Shop"></li>
+				<li><img src="images/Visa.JPEG" alt="Visa"></li>
+			</ul>
 		</section>
+
 	</footer>
 
 	<script defer src="scripts/script.js"></script>

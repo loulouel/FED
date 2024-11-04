@@ -7,21 +7,57 @@
     box-sizing: border-box;
 }
 
-
-
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
+
 :root {
-    /* startje */
-    --background-color-light: #ffffff;
-    --text-color-light: #000000;
-    --background-color-dark: #121212;
-    --text-color-dark: #ffffff;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-bg-color: white;
+    --button-hover-bg-color: #005bb5;
+    --button-text-color: #696969;
+
 }
+
+/* Dark Mode Overrides */
+.dark-mode {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --button-bg-color: #333;
+    --button-hover-bg-color: #666;
+}
+
+/* Apply colors using variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1em;
+    /* Default base font size */
+}
+
+.font-size-controls {
+    margin-bottom: 20px;
+    /* Add some space below the controls */
+}
+
+.font-size-controls button,
+.prev-btn,
+.next-btn {
+    background-color: var(--button-bg-color);
+}
+
+.font-size-controls button:hover,
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+
+/* Custom properties kleuren */
+/* Classerittus kan doen */
+/* Css structuren, dingen groeperen */
+
 
 /* how to do dark mode: https://volodymyrzh.medium.com/implementing-dark-mode-with-css-and-javascript-fd3b2105e081*/
 
@@ -33,26 +69,53 @@
 
 /* jouw code */
 
+@font-face {
+    font-family: 'Recoleta';
+    src: url('fonts/Recoleta.otf') format('opentype');
+    /* Ensure the path is correct */
+
+}
+
+h1,
+h2 {
+    font-family: 'Recoleta', sans-serif;
+    font-weight: bolder;
+}
+
+/* Define the Futura Medium font */
+@font-face {
+    font-family: 'Futura Medium';
+    src: url('fonts/FUTURAMEDIUM.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply Futura Medium to all <p> elements */
+p {
+    font-family: 'Futura Medium', sans-serif;
+    font-weight: normal;
+
+}
 
 
 body {
-    background-color: white;
-    color: black;
     margin: 0;
     padding: 0;
     font-size: 1em;
 }
 
-p, h2, h3 {
+p,
+h2,
+h3 {
     margin-left: 0.3em;
 }
 
 /* Font size control buttons */
 
 .font-size-controls {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .font-size-controls button {
@@ -85,18 +148,6 @@ h3#DarkModetext {
     flex-direction: column;
 }
 
-.dark-mode {
-    background-color: black;
-    color: white;
-}
-
-.light-mode {
-    background-color: white;
-    color: black;
-}
-
-
-
 /* sound */
 
 .audio-container {
@@ -113,7 +164,6 @@ audio {
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.2);
 }
 
-
 /* Header styling */
 .header {
     display: flex;
@@ -128,7 +178,7 @@ audio {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 1.5em;
+    height: 2em;
     width: 2em;
     border: none;
     background: none;
@@ -149,6 +199,60 @@ audio {
 .cart img {
     height: 1.5em;
     width: 1.5em;
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    /* Adjust spacing from the logo */
+}
+
+.cart-icon {
+    width: 3em;
+    /* Adjust size as necessary */
+    height: auto;
+}
+
+.cart-count {
+    position: absolute;
+    top: -0.5em;
+    /* Adjust position */
+    right: -0.5em;
+    /* Adjust position */
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    font-size: 1em;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animation for adding item to cart */
+@keyframes add-to-cart {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        /* Scale up */
+        opacity: 0.7;
+        /* Slightly transparent */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Back to original size */
+        opacity: 1;
+    }
+}
+
+/* Class to trigger animation */
+.animate {
+    animation: add-to-cart 0.5s ease;
+    /* Apply animation */
 }
 
 /* Ensuring proper spacing */
@@ -227,14 +331,12 @@ audio {
     text-decoration: underline;
 }
 
-
 .logo img {
     width: 7em;
     height: auto;
 }
 
 /* begin pagina*/
-
 body,
 img {
     margin: 0;
@@ -247,6 +349,8 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 0.9em;
+    margin-top: 2em;
 }
 
 h1 {
@@ -255,7 +359,6 @@ h1 {
 }
 
 h2 {
-    display: block;
     Font-size: 1.4em;
     margin-top: 3em;
     margin-bottom: 3em;
@@ -265,6 +368,15 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+.media-container {
+    position: relative;
+    /* Set container for positioning */
+}
+
+.responsive-video {
+    width: 100%;
 }
 
 .heading_1 {
@@ -280,10 +392,10 @@ img {
 }
 
 .scaled-image {
-    transform: scale(3); 
-    transform-origin: center; 
+    transform: scale(3);
+    transform-origin: center;
     margin-bottom: 7em;
-  }
+}
 
 .characters {
     display: flex;
@@ -292,18 +404,15 @@ img {
     height: 15em;
 }
 
-
 .characters img {
-    max-width: 13em;
+    max-width: 12em;
     height: auto;
     display: block;
 }
 
-
 .heading_1 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.5em;
 }
 
 .carousel-container {
@@ -319,35 +428,42 @@ img {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    width: 300px;
+    width: 18em;
     justify-content: center;
 }
 
 .carousel-item {
-    flex: 0 0 300px;
+    flex: 0 0 18em;
     text-align: center;
 }
 
 .carousel-item img {
-    width: 200px;
+    width: 12em;
     height: auto;
     display: block;
     margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+    animation: shake 1s ease;
+    transform: scale(1.1);
 }
 
 .character-name {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.2em;
+    margin-top: 1em;
 }
 
 .carousel-nav {
     background: none;
     border: none;
-    font-size: 2em;
+    font-size: 3em;
     cursor: pointer;
     position: absolute;
     transform: translateY(-50%);
     color: black;
+    font-weight: bolder;
 }
 
 .carousel-nav.left {
@@ -357,6 +473,29 @@ img {
 .carousel-nav.right {
     right: 0;
 }
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-0.5em, 0);
+    }
+
+    50% {
+        transform: translate(0.5em, 0);
+    }
+
+    75% {
+        transform: translate(-0.5em, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
 
 .grid-container {
     display: grid;
@@ -378,7 +517,6 @@ img {
 .large-item {
     width: 22em;
     grid-column: 1 / -1;
-    /* Span across both columns */
     border-radius: 1em;
 }
 
@@ -393,13 +531,13 @@ img {
 /* Main container for the news section */
 .news {
     background-color: #fc5454;
-    padding: 3em 0; 
+    padding: 3em 0;
     text-align: center;
     position: relative;
     margin-bottom: -2em;
     margin-top: -1em;
 
-    display: flex;            
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -407,50 +545,50 @@ img {
 /* Header container for news image and heading */
 .news-header {
     display: flex;
-    align-items: center;  
-    justify-content: center;  
-    gap: 0.5em; 
+    align-items: center;
+    gap: 0.5em;
     margin-bottom: 0.5em;
-    padding-left: 2em; 
+    padding-left: 2em;
 }
 
 /* Styling for the image */
 .news-header img {
-    width: 5em;  
+    width: 9em;
     height: auto;
-    margin-top: 0;  
+    margin-top: -2em;
+    margin-left: -4em;
 }
 
 /* Styling for the heading */
 .news-header h2 {
-    font-size: 5em;  
-    font-weight: bold;
+    font-size: 5.5em;
+    font-weight: bolder;
     color: #000;
-    margin: 0; 
+    margin: 0;
+    text-transform: none;
+
 }
 
 /* New white box styling to wrap the carousel */
-.news-white-box {
-    padding: 2em; 
-    background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-}
-
-/* Adjusted container styles */
 .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     max-width: 20em;
     overflow: hidden;
     background-color: white;
+    padding: 0em;
+    margin: 0 auto;
+}
 
+.container p {
+    text-align: start;
 }
 
 /* Buttons styling for navigation */
-#prev-btn,
-#next-btn {
+.prev-btn,
+.next-btn {
     background: none;
     border: none;
     font-size: 2.5em;
@@ -459,22 +597,28 @@ img {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    color:#0056b3;  
+
+    color: #009ee2;
+    font-size: 5rem;
+    font-weight: bolder;
+
 }
 
 /* Position the navigation buttons */
-#prev-btn {
-    left: 1em;  
+.prev-btn {
+    left: 0;
+    margin-left: -0.5em;
 }
 
-#next-btn {
-    right: 1em;  
+.next-btn {
+    right: 0;
+    margin-right: -0.5em;
 }
 
 /* Updated carousel styling to show only one item */
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;  
+    transition: transform 0.5s ease-in-out;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -483,18 +627,18 @@ img {
 
 /* Ensure each item takes full width to display one at a time */
 .carousel-item {
-    min-width: 100%;  
-    flex-shrink: 0; 
+    min-width: 100%;
+    flex-shrink: 0;
     text-align: center;
 }
 
 .carousel-item img {
     width: 100%;
-    border-radius: 0.5em;
 }
 
 .carousel-item p {
-    font-size: 1.4em; 
+    font-size: 1em;
+    font-weight: bold;
     font-family: 'Arial', sans-serif;
     color: #000;
     margin-top: 0.5em;
@@ -505,8 +649,34 @@ img {
     margin: 1em;
 }
 
-.product-info p {
-    font-size: 0.9em;
+
+
+/* Article section styling */
+article p {
+    font-size: 1.1em !important;
+    /* Forces larger size */
+    color: #676767;
+    margin-bottom: 1.25em;
+    /* Adds some space below the paragraph */
+}
+
+/* Footer styling */
+footer {
+    border-top: 0.0625em solid #e0e0e0;
+    /* Border line similar to image */
+    padding-top: 0.625em;
+}
+
+.footer-content {
+    text-align: left;
+}
+
+
+.footer-content p {
+    font-size: 1.1em !important;
+    /* Forces larger size */
+    color: #676767;
+    margin-top: 1em;
 }
 
 footer {
@@ -517,13 +687,10 @@ footer {
 
 footer h2 {
     font-size: 1.5em;
-    ;
     margin-bottom: 0.6em;
 }
 
-footer p {
-    font-size: 0.8em;
-}
+
 
 
 /* shirt page */
@@ -538,7 +705,7 @@ footer p {
 /* Style the placeholder text */
 #name-placeholder {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 /* Style the input field */
@@ -546,27 +713,47 @@ footer p {
     display: block;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.6em;
     padding: 0.6em;
     border: 0.07em solid #ccc;
-    border-radius: 0.3em;
-    width: 80%;
+    width: 100%;
     max-width: 25em;
     margin-top: 2em;
+    font-weight: bolder;
+    margin-bottom: 1.5em;
+}
+
+/* Container with border that surrounds both images */
+.image-container {
+    border: 0.2em solid black;
+    padding: 1em;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+/* Centering the personalisation display which includes the heading and signature */
+#personalisation-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -4em;
 }
 
 /* Style the Roger Hargreaves signature */
 #personalisation-display img {
-    margin-top: 1em;
     width: 9em;
+    height: auto;
+    margin-top: -3.5em;
 }
 
 /* Style for the character image */
 #character-image {
-    display: block;
-    margin: 2em auto;
-    width: 12em;
+    width: 20em;
+    margin-top: 1em;
 }
+
+
 
 
 img[alt="main"] {
@@ -578,7 +765,6 @@ img[alt="main"] {
 img[alt="thumbnail"] {
     cursor: pointer;
     border: 0.125em solid transparent;
-    border-radius: 0.5em;
     transition: border-color 0.3s ease;
     width: 3.5em;
     height: auto;
@@ -602,119 +788,236 @@ img[alt="thumbnail"].selected {
     border-color: #0073e6;
 }
 
-/* Headings */
 h3 {
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: bold;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5em;
 }
 
-/* Size buttons and Color buttons */
-.size-buttons button,
-form button {
-    display: inline-block;
-    background-color: white;
-    color: black;
-    border: 0.1em solid #ccc;
-    border-radius: 0.5em;
-    padding: 0.75em 1.5em;
-    margin: 0.25em;
+.size-section {
+    font-size: 1em;
+}
+
+.size-section h3 {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/* Button Styling */
+#size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+/* Button styling */
+button {
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.3em;
+
 }
 
-.size-buttons button:hover,
-form button:hover {
-    background-color: #e0e0e0;
+button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border-radius: var(--button-border-radius);
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
-.size-buttons button:focus,
-form button:focus,
-.size-buttons button.active,
-form button.active {
+/* Als gebruiker voorkeur voor minder beweging heeft */
+@media (prefers-reduced-motion: reduce) {
+    button:hover {
+        /* Geen beweging; bijvoorbeeld alleen kleurverandering */
+        transform: none;
+        background-color: #ddd;
+    }
+}
+
+button:hover {
+    transform: scale(1.05) translateY(-0.3125em);
+    /* Slight bounce */
+}
+
+.size-btn:hover {
     background-color: #e0f0ff;
-    border-color: #007bff;
-    color: #007bff;
+    color: #00aaff;
+    border-color: rgb(17, 179, 233);
+}
+
+.personalised-btn:hover {
+    background-color: #e0f0ff;
+    color: #00aaff;
+    border-color: rgb(17, 179, 233);
+}
+
+.color-btn:hover {
+    background-color: #e0f0ff;
+    color: #00aaff;
+    border-color: rgb(17, 179, 233);
+}
+
+/* Pas stijlen toe op het formulier als een geselecteerde knop aanwezig is */
+form:has(.size-btn.selected),
+form:has(.personalised-btn.selected),
+form:has(.color-btn.selected) {
+    border: 2px solid #007bff; /* bijvoorbeeld een blauwe rand */
+    padding: 1em;
+    background-color: #f0f8ff;
+}
+
+/* Styling for specific button groups */
+.size-btn,
+.personalised-btn,
+.color-btn {
+    min-width: 8em;
+    text-align: center;
 }
 
 /* Price styling */
-#price {
-    font-size: 1.5em;
-    color: #007bff;
-    margin-left: 0.5em;
-}
-
-/* Quantity buttons */
-#quantity {
-    text-align: center;
-    width: 3em;
-    height: 2.5em;
-    font-size: 0.7em;
-    border: 0.1em solid #ccc;
-    margin: 0 0.5em;
-}
-
-button[type="button"] {
-    background-color: white;
-    border: 0.1em solid #ccc;
-    border-radius: 0.5em;
-    padding: 0.5em 0.75em;
-    font-size: 0.9em;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
+.price-container {
+    display: flex;
     align-items: center;
-    width: 10em;
-    height: 2em;
-}
-
-button[type="button"]:hover {
-    background-color: #f0f0f0;
-}
-
-button[type="button"]:active {
-    background-color: #007bff;
-    color: white;
-}
-
-/* Name input field */
-#name {
-    width: 10em;
-    padding: 0.75em;
-    margin: 0.75em 0;
-    font-size: 0.8em;
-    border: 0.1em solid #ccc;
-    border-radius: 0.5em;
-    box-sizing: border-box;
-}
-
-label {
-    display: block;
-    font-weight: bold;
     margin-top: 1em;
 }
 
-/* Add to cart button */
-#addToCart {
-    background-color: #007bff;
-    color: white;
+.price-label {
+    margin-right: 0.5em;
+}
+
+.price {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-left: 1.5em;
+}
+
+/* Quantity controls styling */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.quantity-controls label {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+.quantity-btn {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.3em 0.7em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #f0f0f0;
+}
+
+#quantity {
+    width: 2em;
+    text-align: center;
+    border: none;
     font-size: 1em;
-    padding: 0.75em 1.5em;
-    border-radius: 0.5em;
+    margin: 0 0.5em;
+    outline: none;
+}
+
+/* Name Section Styling */
+/* Name Section Styling */
+.name-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1em;
+    font-size: 1em;
+    padding: 0 1em;
+    /* Adds space on the left and right */
+}
+
+.name-section label {
+    font-weight: bold;
+    font-size: 1em;
+    /* Same size as the base font */
+    margin-bottom: 0.5em;
+}
+
+#name {
+    width: 100%;
+    padding: 0.7em;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#name::placeholder {
+    color: #333;
+    font-weight: bold;
+    /* Match the bold text in the placeholder */
+}
+
+.char-limit p {
+    margin-top: 0.3em;
+    font-size: 0.4em;
+    color: #666;
+}
+
+/* Add to cart button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Center the button container */
+    margin-top: 1em;
+}
+
+
+#addToCart {
+    background-color: rgb(43, 162, 226);
+    color: white;
+    font-size: 1.2em;
+    padding: 1em 2em;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 25em !important;
+    /* chat gpt gevraagd want het wou maar niet groter worden */
+    display: block !important;
     text-align: center;
+    box-sizing: border-box;
 }
+
 
 #addToCart:hover {
     background-color: #0056b3;
 }
 
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
 /* Layout to match the uploaded image */
 section {
     margin-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .price-section {
@@ -730,6 +1033,16 @@ section {
     justify-content: center;
 }
 
+.feedback {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.selected {
+    background-color: #ddd;
+}
+
 article {
     padding: 1em;
     margin: 0.5em 0;
@@ -739,24 +1052,48 @@ article {
     margin-right: auto;
 }
 
-/* Specific heading styling for <article> */
-article h2 {
-    font-size: 1.5em;
-    margin-bottom: 0.75em;
+/* Target only h2 elements inside section */
+section h2 {
+    font-weight: bold;
+    font-size: 1.2em;
     text-transform: uppercase;
+    color: #000;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
-article li {
-    font-size: 1em;
+/* Target only p elements inside section */
+section p {
+    font-size: 1em !important;
     line-height: 1.6;
-    margin: 0.625em 0;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
-/* Styling for the product grid container to make it scrollable */
+/* Target only ul elements inside section */
+section ul {
+    list-style-type: disc;
+    /* Use bullet points as shown in the image */
+    padding-left: 1.2em;
+    /* Indent to align with paragraph text */
+    margin-top: 0.5em;
+}
+
+/* Target only li elements inside section */
+section li p {
+    font-size: 1em;
+    /* Match paragraph size */
+    color: #333;
+    line-height: 1.6;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 .product-grid {
     display: flex;
     overflow-x: auto;
-    gap: 2em;
+    gap: 0;
     padding: 0 1em;
     scroll-snap-type: x mandatory;
 }
@@ -767,9 +1104,12 @@ article li {
 
 .product-item {
     flex: 0 0 auto;
-    width: 12em;
-    text-align: center;
+    width: 65%;
+    text-align: left;
     scroll-snap-align: center;
+    border: 0.01em solid #ccc;
+    border-radius: 3px 0 0 3px;
+    padding: 2em;
 }
 
 .product-item img {
@@ -805,10 +1145,22 @@ footer {
     width: 10em;
 }
 
+/* Social Media Navigation */
 .social-media {
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
     display: flex;
-    justify-content: start;
-    gap: 0.3em;
+    gap: 0.5em;
+}
+
+.social-media li {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Define the spinning animation */
@@ -826,9 +1178,13 @@ footer {
 .social-media a img {
     width: 2.9em;
     transition: transform 0.8s ease;
-    display: inline-block;
     cursor: pointer;
-    animation: spin 3s ease-out;
+}
+
+/* Add spin on hover */
+.social-media a img:hover {
+    animation: spin 0.8s ease-out;
+    /* Spin when hovered */
 }
 
 
@@ -859,14 +1215,11 @@ footer {
 /* Add the '+' symbol using a pseudo-element */
 .collapsible::after {
     content: '+';
-    /* Adds the plus symbol */
     font-size: 1.5em;
     transition: transform 0.3s ease;
-    /* Smooth transition for rotation */
     position: absolute;
     right: 0;
     top: 50%;
-
 }
 
 /* Content area (hidden by default) */
@@ -896,16 +1249,20 @@ footer {
     text-decoration: underline;
 }
 
-.payment-methods img {
-    width: 2em;
-    height: 1.5em;
-    margin: 0.5em;
-}
-
-.payment-methods {
+.payment-methods ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1em 0;
 }
 
+.payment-methods li {
+    margin: 0.5em;
+}
+
+.payment-methods img {
+    width: 2em;
+    height: 1.5em;
+}

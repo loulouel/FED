@@ -1,50 +1,26 @@
 console.log("Hi")
 
-function darkMode() {
-    let element = document.body;
-    let content = document.getElementById("DarkModetext");
-    element.className = "dark-mode";
-    content.innerText = "Dark Mode is ON";
-}
-function lightMode() {
-    let element = document.body;
-    let content = document.getElementById("DarkModetext");
-    element.className = "light-mode";
-    content.innerText = "Dark Mode is OFF";
+let itemCount = 0; // Initialize item count
+
+document.getElementById('addToCart').addEventListener('click', function () {
+    itemCount++; // Increase item count
+    updateCartCount(); // Update cart count display
+    animateCart(); // Trigger animation
+});
+
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = itemCount; // Update the text in cart count
 }
 
-// Function to increase font size for text elements
-function increaseFontSize() {
-    let textElements = document.querySelectorAll(' h3, p'); // Target specific text elements
-    textElements.forEach(el => {
-        let currentSize = parseFloat(getComputedStyle(el).fontSize);
-        el.style.fontSize = (currentSize + 1) + "px"; // Increase font size by 1px
-        localStorage.setItem(el.tagName + '-fontSize', (currentSize + 1) + "px"); // Store size in localStorage
-    });
-}
+function animateCart() {
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.classList.add('animate'); // Add animation class
 
-// Function to decrease font size for text elements
-function decreaseFontSize() {
-    let textElements = document.querySelectorAll(' h3, p'); // Target specific text elements
-    textElements.forEach(el => {
-        let currentSize = parseFloat(getComputedStyle(el).fontSize);
-        if (currentSize > 10) { // Set a minimum font size limit
-            el.style.fontSize = (currentSize - 1) + "px";
-            localStorage.setItem(el.tagName + '-fontSize', (currentSize - 1) + "px"); // Store size in localStorage
-        }
-    });
+    // Remove animation class after animation ends
+    setTimeout(() => {
+        cartCountElement.classList.remove('animate');
+    }, 500); // Match the duration of the animation
 }
-
-// Load user's preferred font size on page load for specific text elements
-window.onload = function() {
-    let textElements = document.querySelectorAll('h3, p'); // Target text elements
-    textElements.forEach(el => {
-        let savedFontSize = localStorage.getItem(el.tagName + '-fontSize');
-        if (savedFontSize) {
-            el.style.fontSize = savedFontSize;
-        }
-    });
-};
 
 // Selecting the hamburger button, sidebar, and close button 
 var hamburgerButton = document.getElementById("hamburger");
@@ -112,6 +88,8 @@ function updateCarousel() {
 
 // shop page //
 
+// Asked Chat gpt how to do this with the prompt: How do I make it so that when you fill in your name in the text box, it automatically updates elsewhere in the text?//
+
 // Function to update the name in the personalized section // //gevraagd aan chat GPT. Prompt: //
 function updateName() {
     const nameInput = document.getElementById('name-input').value.trim().toUpperCase();
@@ -126,7 +104,23 @@ function updateName() {
 }
 
 
+//I asked ChatGPT how to create a feedback form that provides an alert if the user hasn't selected options for size, personalization, or color.//
+// Also asked https://www.shecodes.io/athena#question-554678 //
 
+const form = document.getElementById('feedbackForm');
+const message = document.getElementById('message');
 
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
+    const name = document.getElementById('name').value;
+    const feedback = document.getElementById('name').value;
 
+    if (!name || !feedback) {
+        message.textContent = 'Please fill in all fields!';
+    } else {
+        message.textContent = ''; // Clear the message if all fields are filled
+        // Proceed with form submission or processing
+        alert('Feedback submitted!'); // For demonstration
+    }
+});
